@@ -1,0 +1,16 @@
+<h1>Wikinimous</h1>
+<ol>
+  <% @articles.each do |article| %>
+  <li>
+    <a><%= link_to article.title, article_path(article) %></a>
+    <a>...
+    <%= link_to "Delete",
+            article_path(article),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %></a>
+
+  </li>
+  <%end%>
+</ol>
+<hr>
+<a><%= link_to "Create new article", new_article_path %></a>
